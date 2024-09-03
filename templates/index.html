@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="choices">
+            <div class="player">
+                <h2>Your Choice:</h2>
+                <form method="POST" id="choiceForm">
+                    <button type="submit" name="choice" value="0" class="choice">
+                        <img src="{{ url_for('static', filename='images/rock1.jpeg') }}" alt="Rock">
+                    </button>
+                    <button type="submit" name="choice" value="1" class="choice">
+                        <img src="{{ url_for('static', filename='images/paper1.jpeg') }}" alt="Paper">
+                    </button>
+                    <button type="submit" name="choice" value="2" class="choice">
+                        <img src="{{ url_for('static', filename='images/scissor1.jpg') }}" alt="Scissors">
+                    </button>
+                </form>
+            </div>
+            <div class="computer">
+                <h2>Computer's Choice:</h2>
+                <img id="computerChoiceImg" src="" alt="">
+            </div>
+        </div>
+        <div class="result">
+            <p id="resultText">{{ result }}</p>
+            <p>Computer chose: {{ computer_choice }}</p>
+        </div>
+    </div>
+</body>
+</html>
